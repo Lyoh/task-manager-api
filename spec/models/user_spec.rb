@@ -9,6 +9,8 @@ RSpec.describe User, type: :model do
   it { is_expected.to allow_value('teste.task@hotmail.com').for(:email) }
   it { is_expected.to validate_uniqueness_of(:auth_token) }
 
+  it { is_expected.to have_many(:tasks).dependent(:destroy) }
+
   describe '#info' do
     it 'returns email and created_at' do
       user.save!
