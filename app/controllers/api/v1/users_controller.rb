@@ -1,10 +1,9 @@
 class Api::V1::UsersController < ApplicationController
-  respond_to :json
-
+  
   def show
     begin
-      @user = User.find(params[:id])
-      respond_with @user  
+      user = User.find(params[:id])
+      render json: user, status: 200  
     rescue 
       head 404
     end
