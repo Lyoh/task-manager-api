@@ -1,4 +1,4 @@
-class Api::V2::UsersController < ApplicationController
+class Api::V2::UsersController < Api::V2::BaseController
   respond_to :json
 
   def show
