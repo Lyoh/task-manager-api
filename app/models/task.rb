@@ -5,7 +5,7 @@ class Task < ApplicationRecord
   validates :title, :user_id, presence: true
 
   def short_description
-    self.description[0..40]
+    self.description[0..40] if self.description.present?
   end
 
   def late?
